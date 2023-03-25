@@ -2,7 +2,7 @@
 
 --------  
 > All the BOTApi's methods can be used as methods of the Bot
-> class.
+> class.    
 --------  
 
 ## All Methods
