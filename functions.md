@@ -4,6 +4,7 @@ Coding in Bota, you can use all the usual PHP functions except file_get_contents
 
 ### Available Functions
    * [runCommand](#runCommand)
+   * [handleCommand](#handleCommand)
    * [setProperty](#setProperty)
    * [getProperty](#getProperty)
    * [answerCallbackQuery](#answercallbackquery)
@@ -27,18 +28,29 @@ $Bot->runCommand("/deposit", ['options' => ['user_id' => 0123456789,'currency' =
 $Bot->sendMessage(["chat_id" => $options->user_id, "text" => "You will deposit: " . $options->currency]);
 ```
 
+### handleCommand
+handleCommand AKA waitForAnswer can be used to run another command.  
+
+```php
+// run other command
+$Bot->runCommand("/deposit");
+
+// run other command with options
+$Bot->runCommand("/deposit", ['options' => ['user_id' => 0123456789,'currency' => 'TRX']]);
+
+// in second command /deposit:
+$Bot->sendMessage(["chat_id" => $options->user_id, "text" => "You will deposit: " . $options->currency]);
+```
+
 ### setProperty
 setProperty function can be used to set property with name for bot.
 
 ```php
 // main class
-$Bot->deleteMessage([
-    "chat_id" => 01234567,
-    "message_id" => 0123456789
-]);
+$Bot->setProperty($chat_id, "name", "value"); // set property for the specific user
 
 // User object
-$User->deleteMessage(0123456789); // set property for the current user
+$User->conversation("name", "value"); // set property for the current user
 ```
 
 
