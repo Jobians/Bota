@@ -28,7 +28,7 @@ $Bot->sendMessage(["chat_id" => $options->user_id, "text" => "You will deposit: 
 ```
 
 ### setProperty
-deleteMessage can be used directly as a method of the main class, as a method of a Message Object (just delete that message) or as a method of a Chat Object, in order to delete a message in that Chat.
+setProperty function can be used to set property with name for bot.
 
 ```php
 // main class
@@ -37,16 +37,13 @@ $Bot->deleteMessage([
     "message_id" => 0123456789
 ]);
 
-// Chat object
-$chat->deleteMessage(0123456789); // just the message_id of the target message
-
-// Message object
-$message->delete(); // just delete
+// User object
+$User->deleteMessage(0123456789); // set property for the current user
 ```
 
 
 ### getProperty
-deleteMessage can be used directly as a method of the main class, as a method of a Message Object (just delete that message) or as a method of a Chat Object, in order to delete a message in that Chat.
+getProperty can be used directly as a method of the main class, as a method of a Message Object (just delete that message) or as a method of a Chat Object, in order to delete a message in that Chat.
 
 ```php
 // main class
