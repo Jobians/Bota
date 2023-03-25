@@ -27,3 +27,38 @@ $Bot->runCommand("/deposit", ['options' => ['user_id' => 0123456789,'currency' =
 $Bot->sendMessage(["chat_id" => $options->user_id, "text" => "You will deposit: " . $options->currency]);
 ```
 
+### setProperty
+deleteMessage can be used directly as a method of the main class, as a method of a Message Object (just delete that message) or as a method of a Chat Object, in order to delete a message in that Chat.
+
+```php
+// main class
+$Bot->deleteMessage([
+    "chat_id" => 01234567,
+    "message_id" => 0123456789
+]);
+
+// Chat object
+$chat->deleteMessage(0123456789); // just the message_id of the target message
+
+// Message object
+$message->delete(); // just delete
+```
+
+
+### getProperty
+deleteMessage can be used directly as a method of the main class, as a method of a Message Object (just delete that message) or as a method of a Chat Object, in order to delete a message in that Chat.
+
+```php
+// main class
+$Bot->deleteMessage([
+    "chat_id" => 01234567,
+    "message_id" => 0123456789
+]);
+
+// Chat object
+$chat->deleteMessage(0123456789); // just the message_id of the target message
+
+// Message object
+$message->delete(); // just delete
+```
+
