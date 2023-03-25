@@ -55,19 +55,12 @@ $User->conversation("name", "value"); // set property for the current user
 
 
 ### getProperty
-getProperty can be used directly as a method of the main class, as a method of a Message Object (just delete that message) or as a method of a Chat Object, in order to delete a message in that Chat.
-
+getProperty function can be use to read property with name. Name is case sensitive.
 ```php
 // main class
-$Bot->deleteMessage([
-    "chat_id" => 01234567,
-    "message_id" => 0123456789
-]);
+$Bot->getProperty($chat_id, "name"); // get property value for the specific user
 
-// Chat object
-$chat->deleteMessage(0123456789); // just the message_id of the target message
-
-// Message object
-$message->delete(); // just delete
+// User object
+$User->conversation("name"); // get property value for the current user
 ```
 
