@@ -5,8 +5,8 @@ Bota - the ultimate Telegram bot hosting built with PHP, powered by [NovaGram](h
 
    * [Getting started](started.md)
    * [Bot Coding](coding.md)
-   * [All the Functions](functions.md)
    * [All the Methods](methods.md)
+   * [All the Functions](functions.md)
    * [Libs](libs.md)
    * [Admin Panel](panel.md)
    * [HTTP request](http.md)
