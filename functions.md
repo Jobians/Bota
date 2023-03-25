@@ -29,14 +29,14 @@ $Bot->sendMessage(["chat_id" => $options->user_id, "text" => "You will deposit: 
 ```
 
 ### handleCommand
-handleCommand AKA waitForAnswer can be used to run another command.  
+handleCommand AKA waitForAnswer can be use to wait for user response or answer 
 
 ```php
-// run other command
-$Bot->runCommand("/deposit");
+// handle another command
+$Bot->handleCommand("/deposit");
 
-// run other command with options
-$Bot->runCommand("/deposit", ['options' => ['user_id' => 0123456789,'currency' => 'TRX']]);
+// handle another command with options
+$Bot->handleCommand("/deposit", ['options' => ['user_id' => 0123456789,'currency' => 'TRX']]);
 
 // in second command /deposit:
 $Bot->sendMessage(["chat_id" => $options->user_id, "text" => "You will deposit: " . $options->currency]);
