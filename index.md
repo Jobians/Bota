@@ -1,5 +1,5 @@
-# NovaGram
-An elegant, Object-Oriented, reliable PHP Telegram Bot Interface
+# Bota Docs
+Bota - the ultimate Telegram bot hosting built with PHP, powered by [NovaGram](https://github.com/skrtdev/NovaGram) Library!
 
 ### Index:
 
