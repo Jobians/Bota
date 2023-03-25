@@ -4,8 +4,8 @@ Coding in Bota, you can use all the usual PHP functions except file_get_contents
 
 ### Available Functions
    * [runCommand](#runCommand)
-   * [forwardMessage](#forwardmessage)
-   * [deleteMessage](#deletemessage)
+   * [setProperty](#setProperty)
+   * [getProperty](#getProperty)
    * [answerCallbackQuery](#answercallbackquery)
    * [editMessageText](#editmessagetext)
    * [sendChatAction](#sendchataction)
