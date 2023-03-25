@@ -1,21 +1,7 @@
-# Documentation
+# Bot Methods
 --------  
 > All the BOTApi's methods can be used as methods of the Bot class.  
-> There are only this library own methods  
 --------  
-
-### Setup Script
-All the methods explained here are supposed to be in a script with this setup:
-```php
-require __DIR__ . '/vendor/autoload.php';
-
-$Bot = new \skrtdev\NovaGram\Bot("YOUR_TOKEN");
-
-$update = $Bot->update;
-$message = $update->message;
-$chat = $message->chat;
-$user = $message->from;
-```
 
 ## All Methods
 How to use any BOTApi Method:
@@ -46,7 +32,7 @@ sendMessage can be used directly as a method of the main class, or as a method o
 $Bot->sendMessage(01234567, "message_text");
 
 // Chat object
-$chat->sendMessage("message_text");
+$Chat->sendMessage("message_text");
 ```
 
 ### forwardMessage
@@ -65,7 +51,7 @@ $Bot->forwardMessage([
 $message->forward(01234567); // just the chat_id of the target chat
 
 // Chat object (forwardTo)
-$chat->forwardTo([
+$Chat->forwardTo([
     "from_chat_id" => 01234567,
     "message_id" => 0123456789
 ]);
@@ -82,7 +68,7 @@ $Bot->deleteMessage([
 ]);
 
 // Chat object
-$chat->deleteMessage(0123456789); // just the message_id of the target message
+$Chat->deleteMessage(0123456789); // just the message_id of the target message
 
 // Message object
 $message->delete(); // just delete
@@ -92,8 +78,6 @@ $message->delete(); // just delete
 answerCallbackQuery can be used directly as a method of the main class or as a method of a CallbackQuery Object, as _answer_ method, in order to answer that CallbackQuery.
 
 ```php
-$CallbackQuery = $update->callback_query;
-
 // main class
 $Bot->answerCallbackQuery([
     "callback_query_id" => 012345678901234567,
@@ -140,8 +124,8 @@ $Bot->sendChatAction([
 ]);
 
 // Chat object
-$chat->sendAction(); // same as below
-$chat->sendAction("typing"); // just action
+$Chat->sendAction(); // same as below
+$Chat->sendAction("typing"); // just action
 ```
 
 ### getUserProfilePhotos
@@ -157,10 +141,10 @@ $Bot->getUserProfilePhotos([
 ]);
 
 // User object
-$user->getProfilePhotos(); // just nothing
-$user->getProfilePhotos(10); // just limit
+$User->getProfilePhotos(); // just nothing
+$User->getProfilePhotos(10); // just limit
 
-$user->getProfilePhotos(10, [
+$User->getProfilePhotos(10, [
     "offset" => 5
 ]);
 ```
@@ -180,8 +164,8 @@ getDC will throw a \\NovaGram\\Exception if Object is not an User, or if User ha
 
 ```php
 // main class
-Bot::getUsernameDC("skrtdev");
+Bot::getUsernameDC("jobianstechie");
 
 // User object
-$user->getDC();
+$User->getDC();
 ```
