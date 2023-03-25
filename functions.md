@@ -7,11 +7,6 @@ Coding in Bota, you can use all the usual PHP functions except file_get_contents
    * [handleCommand](#handleCommand)
    * [setProperty](#setProperty)
    * [getProperty](#getProperty)
-   * [answerCallbackQuery](#answercallbackquery)
-   * [editMessageText](#editmessagetext)
-   * [sendChatAction](#sendchataction)
-   * [getUserProfilePhotos](#getuserprofilephotos)
-   * [getUsernameDC](#getusernamedc)
 
 
 ### runCommand
