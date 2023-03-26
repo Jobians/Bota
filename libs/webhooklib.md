@@ -43,7 +43,15 @@ $User->sendMessage($webhook);
 On command `/onWebhook` we can get posted `$data` from the webhook
 ```php
 <?php
-// for user's webhook
+// user's webhook
+
+// for get method webhook request
+$Bot->sendMessage([
+    "chat_id" => $user_id,
+    "text" => "Hello from webhook"
+]);
+
+// for post method webhook request
 $Bot->sendMessage([
     "chat_id" => $user_id,
     "text" => $data
@@ -63,7 +71,11 @@ $webhook = $Libs->WebhookLib->getUrl($command, $user_id);
 $User->sendMessage("This is global webhook url: $webhook");
 ```
 
-On global command `/onWebhook` we can get posted `$data` from the webhook.<br>As a rule, external service must pass useful data on webhook. For example info about deposit: order_id, user_id and amount. Use it!
+On global command `/onWebhook` we can get posted `$data` from the webhook.
+
+--------
+> As a rule, external service must pass useful data on webhook. For example info about deposit: order_id, user_id and amount. Use it!
+
 ```php
 <?php
 // get user_id, order_id and amount from the webhook
