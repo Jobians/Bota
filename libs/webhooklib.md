@@ -1,6 +1,6 @@
 # WebhookLib
 
-The WebhookLib has one method named `getUrl()` that returns a webhook URL based on the provided parameters.
+The WebhookLib has one method named `getUrl()` that returns a webhook URL based on the provided parameters. Only `$Bot` and some `$Libs` functions work on webhook command
 
 ### Usage
 Here is the usage documentation for the `getUrl()` method:
@@ -40,11 +40,41 @@ $webhook = $Libs->WebhookLib->getUrl($command, $user_id, $options, $redirect_to)
 $User->sendMessage($webhook);
 ```
 
-On command `/onWebhook` we can get posted content from the webhook
+On command `/onWebhook` we can get posted `$data` from the webhook
 ```php
 <?php
-// get the user_id to send message from the webhook
+// for user's webhook
+$Bot->sendMessage([
+    "chat_id" => $user_id,
+    "text" => $data
+]);
+```
 
+### Example 3:
+Global bot webhook lib usage example
+
+```php
+<?php
+// set command and user_id
+$command = "/onWebhook";
+$user_id = 0000000000; // add `0000000000` for global webhook
+
+$webhook = $Libs->WebhookLib->getUrl($command, $user_id);
+$User->sendMessage("This is global webhook url: $webhook");
+```
+
+On global command `/onWebhook` we can get posted `$data` from the webhook.<br>As a rule, external service must pass useful data on webhook. For example info about deposit: order_id, user_id and amount. Use it!
+```php
+<?php
+// get user_id, order_id and amount from the webhook
+$user_id = $data->user_id;
+$order_id = $data->order_id;
+$amount = $data->amount;
+
+$Bot->sendMessage([
+    "chat_id" => $user_id,
+    "text" => "Your deposit of $amount USD for order Id $order_id was successful"
+]);
 ```
 
 
