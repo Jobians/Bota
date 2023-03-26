@@ -71,3 +71,25 @@ if ($referer) {
     $User->sendMessage("You was not referred by anyone");
 }
 ```
+
+### getRefCount
+Get referral count for current user or another user
+
+```php
+<?php
+// get referral count for the current user
+$Libs->ReferralLib->getRefCount();
+
+// get referral count for the another user
+$user_telegramid = 0123456789;
+$Libs->ReferralLib->getRefCount($user_telegramid); // the user must start your bot for this to work
+
+// output eg: 2 if the user have referrals else return 0
+```
+
+Example:
+```php
+<?php
+$ref_count = $Libs->ReferralLib->getRefCount();
+$User->sendMessage("Your referral count is $ref_count");
+```
