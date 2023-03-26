@@ -28,13 +28,7 @@ handleCommand AKA waitForAnswer can be use to wait for user response or answer
 
 ```php
 // handle another command
-$Bot->handleCommand("/deposit");
-
-// handle another command with options
-$Bot->handleCommand("/deposit", ['options' => ['user_id' => 0123456789,'currency' => 'TRX']]);
-
-// in second command /deposit:
-$Bot->sendMessage(["chat_id" => $options->user_id, "text" => "You will deposit: " . $options->currency]);
+$Bot->handleCommand("/amount");
 ```
 
 ### setProperty
