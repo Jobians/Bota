@@ -52,10 +52,15 @@ $Bot->sendMessage([
 ]);
 
 // for post method webhook request
-$Bot->sendMessage([
-    "chat_id" => $user_id,
-    "text" => $data
-]);
+if ($data) {
+    $Bot->sendMessage([
+        "chat_id" => $user_id,
+        "text" => $data
+    ]);
+}
+
+// to get options values use
+$category = $options["category"];
 ```
 
 ### Example 3:
@@ -78,15 +83,17 @@ On global command `/onWebhook` we can get posted `$data` from the webhook.
 
 ```php
 <?php
-// get user_id, order_id and amount from the webhook
-$user_id = $data->user_id;
-$order_id = $data->order_id;
-$amount = $data->amount;
+if ($data) {
+    // get user_id, order_id and amount from the webhook
+    $user_id = $data->user_id;
+    $order_id = $data->order_id;
+    $amount = $data->amount;
 
-$Bot->sendMessage([
-    "chat_id" => $user_id,
-    "text" => "Your deposit of $amount USD for order Id $order_id was successful"
-]);
+    $Bot->sendMessage([
+        "chat_id" => $user_id,
+        "text" => "Your deposit of $amount USD for order Id $order_id was successful"
+    ]);
+}
 ```
 
 
