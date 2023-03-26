@@ -4,6 +4,6 @@
 
 ### Available Libs:
 
-   * [Refferal Lib](refferallib.md)
+   * [Refferal Lib](referrallib.md)
    * [Resources Lib](resourceslib.md)
    * [Webhook Lib](webhooklib.md)
