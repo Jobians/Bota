@@ -90,4 +90,4 @@ $Bot->sendMessage([
 ```
 
 
-Webhooks can be with GET and POST methods only. All passed data contains on content variable
+Webhooks can be with GET and POST methods only. All passed data contains on `$data` variable
