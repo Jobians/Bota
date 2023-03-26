@@ -96,7 +96,7 @@ $Libs->ResourcesLib->userRes($type)->add($amount);
 // add value to a user's resource for another user
 $Libs->ResourcesLib->anotherChatRes($type, $user_id)->add($amount);
 ```
-`$amount` (int): The value to set.
+`$amount` (int): The value to add.
 
 
 Example:
@@ -120,7 +120,7 @@ $Libs->ResourcesLib->anotherChatRes($type, $user_id)->have($amount);
 
 // If it is, the method returns true. If it is not, the method returns false.
 ```
-`$amount` (int): The value to set.
+`$amount` (int): The amount of resources to check for.
 
 
 Example:
@@ -128,5 +128,36 @@ Example:
 <?php
 $amount = 50;
 $check = $Libs->ResourcesLib->userRes("balance")->have($amount);
-$User->sendMessage("Your balance is set to: $amount USD");
+if ($check) {
+    $User->sendMessage("You have enough $amount USD");
+} else {
+    $User->sendMessage("You DON'T have enough $amount USD");
+}
+```
+
+### remove
+The `remove()` method removes a value from a user's resource.
+
+```php
+<?php
+// remove value from a user's resource for the current user
+$Libs->ResourcesLib->userRes($type)->remove($amount);
+
+// remove value from a user's resource for another user
+$Libs->ResourcesLib->anotherChatRes($type, $user_id)->remove($amount);
+```
+`$amount` (int): The value to remove.
+
+
+Example:
+```php
+<?php
+$amount = 5;
+$check = $Libs->ResourcesLib->userRes("balance")->have($amount);
+if ($check) {
+    $Libs->ResourcesLib->userRes("balance")->remove($amount);
+    $User->sendMessage("We have removed: $amount USD");
+} else {
+    $User->sendMessage("You DON'T have enough $amount USD");
+}
 ```
