@@ -93,3 +93,53 @@ Example:
 $ref_count = $Libs->ReferralLib->getRefCount();
 $User->sendMessage("Your referral count is $ref_count");
 ```
+
+### getRefList
+Get referral users list for current user or another user
+
+```php
+<?php
+// get referral users list for the current user
+$Libs->ReferralLib->getRefList();
+
+// get referral users list for the another user
+$user_telegramid = 0123456789;
+$Libs->ReferralLib->getRefList($user_telegramid); // the user must start your bot for this to work
+
+// output eg: array of user referrals else return null
+```
+
+### getTopList
+Get top referral list for the bot
+
+```php
+<?php
+// get top referral list with default limit of 10
+$Libs->ReferralLib->getTopList();
+
+// get top referral list with limit of 100
+$Libs->ReferralLib->getTopList(100);
+
+// output eg: array of top referrals else return null
+```
+
+### getUsersList
+Get the list of all user id for the bot, good for broadcast
+
+```php
+<?php
+// get list of all user id for the bot
+$Libs->ReferralLib->getUsersList();
+
+// output eg: array of all user id for the bot else return null
+```
+
+### destroy
+Use this function if only you want to reset or empty referral lib data for the current bot:  
+
+```php
+<?php
+$Libs->ReferralLib->destroy();
+
+// it will return true
+```
