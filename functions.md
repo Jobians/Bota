@@ -3,10 +3,10 @@
 Coding in Bota, you can use all the usual PHP functions except file_get_contents() and eval()
 
 ### Available Functions
-   * [runCommand](#runCommand)
-   * [handleCommand](#handleCommand)
-   * [setProperty](#setProperty)
-   * [getProperty](#getProperty)
+   * [runCommand](#runcommand)
+   * [handleCommand](#handlecommand)
+   * [setProperty](#setproperty)
+   * [getProperty](#getproperty)
 
 
 ### runCommand
