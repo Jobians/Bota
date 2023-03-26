@@ -4,12 +4,12 @@ Use this Lib for referral system and tracking.
 
 ### Available ReferralLib Functions
    * [track](#track)
-   * [getLink](#getLink)
-   * [getReferredBy](#getReferredBy)
-   * [getRefCount](#getRefCount)
-   * [getRefList](#getRefList)
-   * [getTopList](#getTopList)
-   * [getUsersList](#getUsersList)
+   * [getLink](#getlink)
+   * [getReferredBy](#getreferredby)
+   * [getRefCount](#getrefcount)
+   * [getRefList](#getreflist)
+   * [getTopList](#gettoplist)
+   * [getUsersList](#getuserslist)
    * [destroy](#destroy)
 
 
