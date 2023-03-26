@@ -36,7 +36,7 @@ $Libs->ReferralLib->getLink();
 $user_telegramid = 0123456789;
 $Libs->ReferralLib->getLink($user_telegramid); // the user must start your bot for this to work
 
-// output https://t.me/botname?start=ref01234567
+// output eg: https://t.me/botname?start=ref01234567
 ```
 
 Example:
@@ -64,7 +64,10 @@ $Libs->ReferralLib->getReferredBy($user_telegramid); // the user must start your
 Example:
 ```php
 <?php
-$myref = $Libs->ReferralLib->getReferredBy();
-if 
-$User->sendMessage("Your referral link is: $mylink");
+$referer = $Libs->ReferralLib->getReferredBy();
+if ($referer) {
+    $User->sendMessage("You was referred by $referer");
+} else {
+    $User->sendMessage("You was not referred by anyone");
+}
 ```
