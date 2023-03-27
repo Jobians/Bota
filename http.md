@@ -1,4 +1,4 @@
-# HTTP Class
+# HTTP Request
 
 The HTTP class provides a simple way to make HTTP requests and send emails via a RESTful API.
 
@@ -6,21 +6,16 @@ The HTTP class provides a simple way to make HTTP requests and send emails via a
 
 To use the HTTP class, follow these steps:
 
-1. Create an instance of the HTTP class:
-    ```php
-    $http = new HTTP();
-    ```
-
-2. Make a GET request:
+1. Make a GET request:
     ```php
     $url = 'https://example.com/api/get';
     $headers = [
         'Authorization: Bearer myToken'
     ];
-    $response = $http->get($url, $headers);
+    $response = $HTTP->get($url, $headers);
     ```
 
-3. Make a POST request:
+2. Make a POST request:
     ```php
     $url = 'https://example.com/api/post';
     $data = [
@@ -30,17 +25,19 @@ To use the HTTP class, follow these steps:
     $headers = [
         'Authorization: Bearer myToken'
     ];
-    $response = $http->post($url, $data, $headers);
+    $response = $HTTP->post($url, $data, $headers);
     ```
 
-4. Send an email:
+3. Send an email:
     ```php
     $data = [
-        'to' => 'recipient@example.com',
+        'sender' => 'yourgmail@gmail.com',
+        'password' => 'your_gmail_app_password',
+        'recipient' => 'recipient@example.com',
         'subject' => 'Hello',
         'message' => 'This is a test email'
     ];
-    $response = $http->sendMail($data);
+    $response = $HTTP->sendMail($data);
     ```
 
 ## Methods
@@ -52,8 +49,8 @@ Sends a POST request to the specified URL.
 #### Parameters:
 
 - `$url` (string): The URL to send the request to.
-- `$data` (array|string): The data to send with the request.
-- `$headers` (array): An array of headers to send with the request.
+- `$data` (array): The data to send with the request.
+- `$headers` (array) (optional): An array of headers to send with the request.
 
 #### Returns:
 
@@ -66,7 +63,7 @@ Sends a GET request to the specified URL.
 #### Parameters:
 
 - `$url` (string): The URL to send the request to.
-- `$headers` (array): An array of headers to send with the request.
+- `$headers` (array) (optional): An array of headers to send with the request.
 
 #### Returns:
 
