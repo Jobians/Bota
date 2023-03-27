@@ -42,7 +42,7 @@ To use the HTTP class, follow these steps:
 
 ## Methods
 
-### `post($url, $data = [], $headers = [])`
+### `post($url, $data, $headers = [])`
 
 Sends a POST request to the specified URL.
 
