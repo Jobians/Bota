@@ -2,6 +2,7 @@
 
 The Bot Panel is a tool that allows you to manage the settings for your bot. To set up the Bot Panel, you will need to create a `panel.json` command with the following example information:
 
+
 ## `panel.json` command format
 
 ```json
