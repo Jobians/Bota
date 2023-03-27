@@ -54,4 +54,28 @@ The `fields` field is an array of objects, each of which represents a field in t
 
 ## Using the Bot Panel
 
-To use the Bot Panel, simply include the `panel.json` file in your bot's project directory. Then, load the file using your preferred method of reading JSON files in your programming language. Finally, render the fields in the file to a web page, and allow users to edit the values of the fields. When the user clicks the save button, save the values of the fields to a database or configuration file.
+Here is an example of how to use the `$Panel` function to extract the field values from the bot panel:
+
+```php
+// Extract the field values from the bot panel
+$bot_name = $Panel->getValue('bot_name');
+$last_name = $Panel->getValue('last_name');
+$email = $Panel->getValue('email');
+
+// Use the field values in your Bot code
+$User->sendMessage("The bot name from the panel is $bot_name");
+$User->sendMessage("The last name from the panel is $last_name");
+$User->sendMessage("The email from the panel is $email");
+
+```
+
+In this example, we're using the `getValue()` method of the `$Panel` function to retrieve the value of the `bot_name` field from the Bot panel.
+
+You can also use the `getValue()` method to get the values of other fields in the bot panel by passing in the name of the field you want to retrieve.
+
+```php
+<?php
+$name = "bot_name"; // the unique name from the panel field
+$name_value = $Panel->getValue($name);
+$User->sendMessage("The bot name from the panel is $name_value");
+```
