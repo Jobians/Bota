@@ -9,14 +9,20 @@ This error can be handle in two ways:
 
 2. By creating `!` command with the following example code:
 ```php
-$Bot->addErrorHandler(function (Throwable $e) use ($Bot) {
-    $Bot->debug( (string) $e );
-});
+<?php
+// "!" error command example code
+$admin_id = 1350180828;
+$Bot->sendMessage([
+    "chat_id" => $admin_id,
+    "text" => $error
+]);
 ```
 
 ## Telegram Error
 
-Telegram Exceptions thrown by NovaGram are `skrtdev\Telegram\Exceptions`, but sometimes they are more speficic Exceptions that extend the main one, according to `error_code` number. Here's the full list:  
+This error can only be handled by setting up your telegram id in the bot setting tab. 
+
+### Here's the full list:  
 
 - `BadRequestException` (400)
 - `UnauthorizedException` (401)
