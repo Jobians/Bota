@@ -1,6 +1,6 @@
 # Updates Handling
 
-In order to handle different kinds of updates, you can put all your in code in the `onUpdate` handler, or split it across different handlers (e.g. `onMessage`, `onCallbackQuery`)
+Bota makes it easy for you to handle other telegram updates except `Message` update which is already handled via command, to handle different kinds of updates, you can put all your in code in the `*` command.
 
 ```php
 $Bot->onUpdate(function (Update $update) use ($Bot) {
