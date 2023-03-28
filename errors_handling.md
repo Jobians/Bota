@@ -2,14 +2,12 @@
 
 We have two types of errors, Bota error (Server error) and Telegram error
 
-
-
-
-
-
 ## Bota Error
 
-The settings debug parameter just creates this error handler:  
+This error can be handle in two ways:
+1. By setting your telegram id in the bot setting tab
+
+2. By creating `!` command with the following example code:
 ```php
 $Bot->addErrorHandler(function (Throwable $e) use ($Bot) {
     $Bot->debug( (string) $e );
