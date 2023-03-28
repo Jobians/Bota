@@ -17,6 +17,12 @@ $Bot->sendMessage([
     "text" => $error
 ]);
 ```
+Some pre defined veriable that will be present in `!` error command when server error occur:
+
+- `$command`: The command which the error occur in.
+- `$errline`: The line number where the error occur.
+- `$error`: The full error message.
+
 
 ## Telegram Error
 
