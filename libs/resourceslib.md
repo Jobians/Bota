@@ -17,7 +17,7 @@ The `userRes()` method is used to set the `type` of a user's resource for the cu
 
 ```php
 <?php
-$Libs->$ResourcesLib->userRes($type);
+$Libs->ResourcesLib->userRes($type);
 ```
 `$type` (string): The type of resource.
 
