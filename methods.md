@@ -13,8 +13,15 @@ $Bot->METHOD_NAME([
     "field2_name" => "field2_value"
 ])
 ```
+Example:
+```php
+$Bot->sendDice([
+    "chat_id" => "@channelusername",
+    "emoji" => "🎲"
+])
+```
 
-### Available Methods
+### Some Methods Examples
    * [sendMessage](#sendmessage)
    * [forwardMessage](#forwardmessage)
    * [deleteMessage](#deletemessage)
