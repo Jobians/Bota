@@ -50,7 +50,7 @@ The `fields` field is an array of objects, each of which represents a field in t
 
 - `name`: A unique name for the field.
 - `title`: The title of the field that will be displayed to the user.
-- `type`: The type of field. Currently, only `text` and `email` are supported.
+- `type`: The type of field.
 - `value`: The default value of the field.
 - `description`: A description of the field that will be displayed to the user.
 
