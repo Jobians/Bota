@@ -28,7 +28,7 @@ Some pre defined veriable that will be present in `!` error command when server 
 
 This error can only be handled by setting up your telegram id in the bot setting tab. 
 
-![](</.gitbook/assets/IMG_20230328_101347_536.jpg>)
+![Setting owner telegram id image](https://raw.githubusercontent.com/Jobians/bota/main/.gitbook/assets/IMG_20230328_101347_536.jpg)
 
 After setting your telegram id, bot will automatically send all telegram errors in your pm only.
 
