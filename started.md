@@ -13,6 +13,3 @@ That's it! You are now ready to start building and hosting your own Telegram bot
 ## Install bots from the Store
 
 Our platform includes a Bot Store where you can browse and import pre-built bots, saving you time and effort in developing your own bot from scratch.
-
-
-[How to create a Bot Instance](construct.md)
