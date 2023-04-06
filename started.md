@@ -1,4 +1,4 @@
-## Getting started
+# Getting started
 
 To get started with Bota, you will need to get a bot token from @BotFather.
 
