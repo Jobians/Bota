@@ -32,3 +32,5 @@ Make protected bots with [Admin Panels](panel.md) and sell them
 If you want to sell your bot - just start develop it.
 
 You can transfer protected bot for another users via bot settings tab and check the protected bot checkbox option.
+
+![Protected Bot Setting Image](https://raw.githubusercontent.com/Jobians/bota/main/protected_bot.jpg)
