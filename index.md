@@ -1,5 +1,5 @@
 # Bota Docs
-Bota - the ultimate Telegram bot hosting built with PHP, powered by [NovaGram](https://github.com/skrtdev/NovaGram) Library!
+Bota - the ultimate Telegram bot hosting built with PHP!
 
 ### Index:
 
