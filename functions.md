@@ -7,6 +7,8 @@ Coding in Bota, you can use all the usual PHP functions except file_get_contents
    * [handleCommand](#handlecommand)
    * [setProperty](#setproperty)
    * [getProperty](#getproperty)
+   * [banChat](#banchat)
+   * [unbanChat](#unbanchat)
 
 
 ### runCommand
@@ -51,5 +53,27 @@ $Bot->getProperty($chat_id, "name"); // get property value for the specific user
 
 // User object
 $User->conversation("name"); // get property value for the current user
+```
+
+
+### banChat
+Use this function to ban chat id or user in your bot.
+```php
+<?php
+$Bot->banChat($chat_id);
+```
+You can also pass reason message to send to the banned chat id (optional)
+```php
+<?php
+$reason = "Sorry, you have been banned for using multiple account";
+$Bot->banChat($chat_id, $reason);
+```
+
+
+### unbanChat
+Use this function to unban banned chat id in your bot.
+```php
+<?php
+$Bot->unbanChat($chat_id);
 ```
 
