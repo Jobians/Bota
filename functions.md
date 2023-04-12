@@ -85,15 +85,34 @@ $Bot->unbanChat($chat_id);
 ```
 
 ### runAfter
-runAfter function is used to run command after specific amount of time, we only support from 1 to 44640 minutes.
+runAfter method is used to schedule a command to run after a specified number of minutes (1 to 44640). It can be used in bots to automate tasks and execute commands at a later time.
+
+- Parameters
+
+The method takes in a single parameter, `$settings`, which is an array of options that specify the details of the command to be scheduled. The following options are available:
 
 ```php
-// handle another command
-$Bot->handleCommand("/amount");
+$settings = [
+    'command' => '',    // The name of the command to run after the specified number of minutes.
+    'minutes' => '',    // The number of minutes after which the command should be run.
+    'label' => '',      // (Optional) A label to identify the scheduled task.
+    'options' => []     // (Optional) An array of additional options to pass to the command.
+];
+```
 
-// handle another command with options
-$Bot->handleCommand("/amount", ['options' => ['user_id' => 0123456789,'currency' => 'TRX']]);
+- Usage
 
-// in second command /amount:
-$Bot->sendMessage(["chat_id" => $options->user_id, "text" => "You will deposit: " . $options->currency]);
+```php
+$settings = [
+    'command' => 'my_command',    // Replace with the name of your command.
+    'minutes' => 60,              // Replace with the number of minutes after which the command should run.
+    'label' => 'my_label',        // (Optional) Replace with a label to identify the scheduled task.
+    'options' => []              // (Optional) Replace with an array of additional options to pass to the command.
+];
+$id = Bot::addMethod("runAfter", $settings);
+if ($id) {
+    echo "Command scheduled successfully!";
+} else {
+    echo "Error scheduling command.";
+}
 ```
