@@ -107,7 +107,10 @@ $settings = [
     'command' => 'my_command',    // Replace with the name of your command.
     'minutes' => 60,              // Replace with the number of minutes after which the command should run.
     'label' => 'my_label',        // (Optional) Replace with a label to identify the scheduled task.
-    'options' => []              // (Optional) Replace with an array of additional options to pass to the command.
+    'options' => [
+        'param1' => 'value1',
+        'param2' => 'value2',
+    ],                            // (Optional) Replace with an array of additional options to pass to the command.
 ];
 $id = $Bot->runAfter($settings);
 if ($id) {
