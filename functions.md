@@ -109,11 +109,12 @@ $settings = [
     'label' => 'my_label',        // (Optional) Replace with a label to identify the scheduled task.
     'options' => []              // (Optional) Replace with an array of additional options to pass to the command.
 ];
-$id = Bot::addMethod("runAfter", $settings);
+$id = $Bot->runAfter($settings);
 if ($id) {
-    echo "Command scheduled successfully!";
+    // you can save this id if you want to cancel scheduled command in future.
+    $User->sendMessage($id);
 } else {
-    echo "Error scheduling command.";
+    $User->sendMessage("Error scheduling command.");
 }
 ```
 
@@ -128,13 +129,11 @@ $settings = [
     // or
     'label' => 'my_label'// Replace with the label of the scheduled task to cancel.
 ];
-
-$result = Bot::addMethod("runAfter", $settings);
-
+$result = $Bot->runAfter($settings);
 if ($result) {
-    echo "Command canceled successfully!";
+    $User->sendMessage("Command canceled successfully!");
 } else {
-    echo "Error canceling command.";
+    $User->sendMessage("Error canceling command.");
 }
 ```
 Note that you must provide either the `id` or `label` of the scheduled task to cancel, and not both.
