@@ -9,6 +9,7 @@ Coding in Bota, you can use all the usual PHP functions except file_get_contents
    * [getProperty](#getproperty)
    * [banChat](#banchat)
    * [unbanChat](#unbanchat)
+   * [runAfter](#runafter)
 
 
 ### runCommand
@@ -83,3 +84,59 @@ Use this function to unban banned chat id in your bot.
 $Bot->unbanChat($chat_id);
 ```
 
+### runAfter
+runAfter method is used to schedule a command to run after a specified number of minutes (1 to 44640). It can be used in bots to automate tasks and execute commands at a later time.
+
+- Parameters
+
+The method takes in a single parameter, `$settings`, which is an array of options that specify the details of the command to be scheduled. The following options are available:
+
+```php
+$settings = [
+    'command' => '',    // The name of the command to run after the specified number of minutes.
+    'minutes' => '',    // The number of minutes after which the command should be run.
+    'label' => '',      // (Optional) A label to identify the scheduled task.
+    'options' => []     // (Optional) An array of additional options to pass to the command.
+];
+```
+
+- Usage
+
+```php
+$settings = [
+    'command' => 'my_command',    // Replace with the name of your command.
+    'minutes' => 60,              // Replace with the number of minutes after which the command should run.
+    'label' => 'my_label',        // (Optional) Replace with a label to identify the scheduled task.
+    'options' => [
+        'param1' => 'value1',
+        'param2' => 'value2',
+    ],                            // (Optional) Replace with an array of additional options to pass to the command.
+];
+$id = $Bot->runAfter($settings);
+if ($id) {
+    // you can save this id if you want to cancel scheduled command in future.
+    $User->sendMessage($id);
+} else {
+    $User->sendMessage("Error scheduling command.");
+}
+```
+
+- Canceling a Scheduled Command
+
+To cancel a scheduled command, you can pass in an additional option `cancel` with the value `true`, along with either the `id` or `label` of the scheduled task to cancel:
+
+```php
+$settings = [
+    'cancel' => true,    // Set to true to cancel the scheduled task.
+    'id' => 123,         // Replace with the ID of the scheduled task to cancel.
+    // or
+    'label' => 'my_label'// Replace with the label of the scheduled task to cancel.
+];
+$result = $Bot->runAfter($settings);
+if ($result) {
+    $User->sendMessage("Command canceled successfully!");
+} else {
+    $User->sendMessage("Error canceling command.");
+}
+```
+Note that you must provide either the `id` or `label` of the scheduled task to cancel, and not both.
