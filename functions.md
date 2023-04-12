@@ -116,3 +116,25 @@ if ($id) {
     echo "Error scheduling command.";
 }
 ```
+
+- Canceling a Scheduled Command
+
+To cancel a scheduled command, you can pass in an additional option `cancel` with the value `true`, along with either the `id` or `label` of the scheduled task to cancel:
+
+```php
+$settings = [
+    'cancel' => true,    // Set to true to cancel the scheduled task.
+    'id' => 123,         // Replace with the ID of the scheduled task to cancel.
+    // or
+    'label' => 'my_label'// Replace with the label of the scheduled task to cancel.
+];
+
+$result = Bot::addMethod("runAfter", $settings);
+
+if ($result) {
+    echo "Command canceled successfully!";
+} else {
+    echo "Error canceling command.";
+}
+```
+Note that you must provide either the `id` or `label` of the scheduled task to cancel, and not both.
