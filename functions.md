@@ -85,7 +85,7 @@ $Bot->unbanChat($chat_id);
 ```
 
 ### runAfter
-runAfter function is used to run command after specific amount of time, we only support from 1 to 66 minutes.
+runAfter function is used to run command after specific amount of time, we only support from 1 to 44640 minutes.
 
 ```php
 // handle another command
