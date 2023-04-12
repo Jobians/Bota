@@ -9,6 +9,7 @@ Coding in Bota, you can use all the usual PHP functions except file_get_contents
    * [getProperty](#getproperty)
    * [banChat](#banchat)
    * [unbanChat](#unbanchat)
+   * [runAfter](#runafter)
 
 
 ### runCommand
@@ -83,3 +84,16 @@ Use this function to unban banned chat id in your bot.
 $Bot->unbanChat($chat_id);
 ```
 
+### runAfter
+runAfter function is used to run command after specific amount of time, we only support from 1 to 66 minutes.
+
+```php
+// handle another command
+$Bot->handleCommand("/amount");
+
+// handle another command with options
+$Bot->handleCommand("/amount", ['options' => ['user_id' => 0123456789,'currency' => 'TRX']]);
+
+// in second command /amount:
+$Bot->sendMessage(["chat_id" => $options->user_id, "text" => "You will deposit: " . $options->currency]);
+```
