@@ -1,5 +1,5 @@
 # Bota Docs
-Bota - the ultimate Telegram bot hosting built with PHP!
+Bota - the ultimate Telegram bot hosting built with PHP8!
 
 ### Index:
 
