@@ -5,6 +5,7 @@ Bota - the ultimate Telegram bot hosting built with PHP!
 
    * [Getting started](started.md)
    * [Bot Coding](coding.md)
+   * [Variables](variables.md)
    * [All the Methods](methods.md)
    * [All the Functions](functions.md)
    * [Libs](libs)
