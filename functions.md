@@ -9,6 +9,7 @@ Coding in Bota, you can use all the usual PHP functions except file_get_contents
    * [getProperty](#getproperty)
    * [banChat](#banchat)
    * [unbanChat](#unbanchat)
+   * [bulk](#bulk)
    * [runAfter](#runafter)
 
 
@@ -83,6 +84,24 @@ Use this function to unban banned chat id in your bot.
 <?php
 $Bot->unbanChat($chat_id);
 ```
+
+### bulk
+bulk method also known as broadcast, it can be used to send message to all users of a bot.
+
+Parameters:
+
+- $method (string): The name of the Telegram Bot API method to call (e.g. "sendMessage").
+
+- $parameters (array): An array of parameters to pass to the Telegram Bot API method.
+
+```php
+<?php
+$result = $Bot->bulk("sendMessage", [
+    "text" => "Hello, world!"
+]);
+$User->sendMessage($result);
+```
+
 
 ### runAfter
 runAfter method is used to schedule a command to run after a specified number of minutes (1 to 44640). It can be used in bots to automate tasks and execute commands at a later time.
